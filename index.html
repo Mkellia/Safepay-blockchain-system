@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blockchain Escrow System</title>
+
+  <!-- Embedded CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .card {
+      background: #fafafa;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    .card input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .card button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Blockchain Escrow System</h1>
+    <p>This platform uses an Ethereum smart contract to protect buyers by holding funds until delivery is confirmed with an OTP.</p>
+
+    <div class="card">
+      <h2>Deploy Contract</h2>
+      <input id="buyer" type="text" placeholder="Buyer Address" />
+      <input id="seller" type="text" placeholder="Seller Address" />
+      <input id="delivery" type="text" placeholder="Delivery Person Address" />
+      <button onclick="deployContract()">Deploy Contract</button>
+    </div>
+
+    <div class="card">
+      <h2>Set OTP</h2>
+      <input id="otp" type="text" placeholder="Enter OTP" />
+      <button onclick="setOTP()">Set OTP</button>
+    </div>
+
+    <div class="card">
+      <h2>Confirm Delivery</h2>
+      <input id="deliveryOtp" type="text" placeholder="Enter Delivery OTP" />
+      <button onclick="confirmDelivery()">Confirm Delivery</button>
+    </div>
+
+    <div class="card">
+      <h2>Refund</h2>
+      <button onclick="requestRefund()">Request Refund</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
